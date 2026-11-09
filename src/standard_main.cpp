@@ -14,6 +14,6 @@ int main(int argc, char * argv[])
 	Picture collage {};
 	collage.add(Circle{0, 0}, "circle", 5};
 	collage.print_all(cout);
-	// collage.draw_all(cout);
+	collage.draw_all(cout);
 	// double total = college.total_area();
 }

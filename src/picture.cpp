@@ -23,4 +23,20 @@ void Picture::print_all(std::ostream& out) const {
 	}
 }
 
+void Picture::draw_all(std::ostream& out) const {
+	ListNode* current = head;
+	while (current != nullptr) {
+		current->shape->draw(out);
+		current = current->next;
+	}
+}
 
+double Picture::total_area() const {
+	double total = 0.0;
+	ListNode* current = head;
+	while(current != nullptr) {
+		total += current->shape->area();
+		current = current->next;
+	}
+	return total;
+}
