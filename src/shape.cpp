@@ -1,18 +1,11 @@
 #include "shape.hpp"
 #include <iostream>
 
-Shape::Shape(Point center, std::string name) {}
+Shape::Shape(Point center, std::string name) 
+	: center(center), name(std::move(name)) {}
 
-void Shape::print(std::ostream& out) const {}
+void Shape::print(std::ostream& out) const {
+	out << name << "at (" << center.x << ", " << center.y << "area = " << area() << endl;
+}
 
-Shape& Shape::operator=(const Shape* other) {}
-
-virtual double Shape::area() const {}
-
-virtual void Shape::draw(std::ostream& out) const {}
-
-virtual Shape* Shape::clone() const {}
-
-// virtual ~Shape() {}
-
-Shape::Shape(const Shape& other) {}
+// virtual Shape::~Shape() {}
