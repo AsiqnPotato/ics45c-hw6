@@ -4,10 +4,10 @@
 #include <iosfwd>
 #include <string>
 
-struct{
+struct Point{
 	int x;
 	int y;
-}
+};
 
 class Shape {
 public:

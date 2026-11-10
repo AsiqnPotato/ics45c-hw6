@@ -9,13 +9,13 @@ public:
 
 	double area() const override;
 	void draw(std::ostream& out) const override;
-	Rectangle* clone() const override;
+	Triangle* clone() const override;
 
 protected:
 	Triangle(const Triangle& other) = default;
 
 private:
-	int width, int height;
+	int base, height;
 };
 
 #endif

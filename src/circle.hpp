@@ -12,9 +12,9 @@ public:
 	Circle* clone() const override;
 
 protected:
-	Circle(const Circle*& other) = default;
+	Circle(const Circle& other) = default;
 
-private;
+private:
 	int radius;
 };
 

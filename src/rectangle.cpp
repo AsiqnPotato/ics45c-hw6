@@ -1,7 +1,7 @@
 #include "rectangle.hpp"
 #include <iostream>
 
-Rectangle::Rectangle(Point center, std::stream, int width, int height) 
+Rectangle::Rectangle(Point center, std::string name, int width, int height) 
 	: Shape(center, std::move(name)), width(width), height(height) {
 }
 

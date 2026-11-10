@@ -8,19 +8,19 @@ class Picture {
 public:
 	Picture();
 
-	Picture(const Picture&& other);
-	Picture(Picture&& other);
+	Picture(const Picture& other);
+	Picture(Picture&& other) noexcept;
 
 	void swap(Picture& other);
 
 	Picture& operator=(const Picture& other);
-	Picture& operator=(Picture&& other);
+	Picture& operator=(Picture&& other) noexcept;
 
 	void add(const Shape& shape);
 
 	void print_all(std::ostream& out) const;
 
-	void draw_al(std::ostream& out) const;
+	void draw_all(std::ostream& out) const;
 
 	double total_area() const;
 

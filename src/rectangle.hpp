@@ -15,7 +15,7 @@ protected:
 	Rectangle(const Rectangle& other) = default;
 
 private:
-	int width, int height;
+	int width, height;
 };
 
 #endif

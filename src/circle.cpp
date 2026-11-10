@@ -6,7 +6,7 @@ Circle::Circle(Point center, std::string name, int radius)
 	: Shape(center, std::move(name)), radius(radius) {
 }
 
-double Circle::area() {
+double Circle::area() const {
 	double circ_area = radius * std::numbers::pi;
 	return circ_area;
 }
