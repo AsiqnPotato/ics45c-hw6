@@ -7,11 +7,17 @@ Circle::Circle(Point center, std::string name, int radius)
 }
 
 double Circle::area() {
-	return 0.0;
+	double circ_area = radius * std::numbers::pi;
+	return circ_area;
 }
 
 void Circle::draw(std::ostream& out) const {
-	
+	for (int y = -radius; y <= radius; y += 2) {
+		for (int x = -radius; x <= radius; ++x) {
+			out << (x * x + y * y <= radius * radius ? '*' : ' ');
+		}
+		out << '\n';
+	}
 }
 
 Circle* Circle::clone() const {
