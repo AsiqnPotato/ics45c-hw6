@@ -21,7 +21,7 @@ Shape(Point center, std::string name);
 
 	virtual void draw(std::ostream&out) const = 0;
 	
-	// virtual Shape* clone() const = 0;
+	virtual Shape* clone() const = 0;
 
 	virtual ~Shape() = default;
 

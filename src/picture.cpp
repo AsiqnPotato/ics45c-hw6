@@ -41,3 +41,12 @@ double Picture::total_area() const {
 	}
 	return total;
 }
+
+Picture::~Picture() {
+	ListNode* current = head;
+	while (current != nullptr) {
+		ListNode* next_node = current->next;
+		delete current->shape;
+		delete current;
+		current = next_node;
+}

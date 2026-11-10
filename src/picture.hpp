@@ -24,7 +24,7 @@ public:
 
 	double total_area() const;
 
-	// ~Picture();
+	~Picture();
 
 private:
 	struct ListNode {
