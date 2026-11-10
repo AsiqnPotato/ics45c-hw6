@@ -3,7 +3,8 @@
 #include <numbers>
 
 Circle::Circle(Point center, std::string name, int radius)
-	: Shape(center, std::move(name)), radius(radius) {}
+	: Shape(center, std::move(name)), radius(radius) {
+}
 
 double Circle::area() {
 	return 0.0;

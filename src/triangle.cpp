@@ -3,7 +3,8 @@
 #include <iostream>
 
 Triangle::Triangle(Point center, std::stream, int base, int height)
-	: Shape(center, std::move(name)), base(base), height(height) {}
+	: Shape(center, std::move(name)), base(base), height(height) {
+}
 
 double Triangle::area() const {
 	double tri_area = base * height * 0.5;

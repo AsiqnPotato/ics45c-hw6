@@ -2,7 +2,8 @@
 #include <iostream>
 
 Rectangle::Rectangle(Point center, std::stream, int width, int height) 
-	: Shape(center, std::move(name)), width(width), height(height) {}
+	: Shape(center, std::move(name)), width(width), height(height) {
+}
 
 double Rectangle::area() const {
 	double rec_area = width * height * 1.0;
