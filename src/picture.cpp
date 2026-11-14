@@ -16,7 +16,7 @@ void Picture::add(const Shape& shape) {
 	}
 }
 
-Picture::Picture(const Picture& other) : head(other.head), tail(other.tail) {
+Picture::Picture(const Picture& other) : head(nullptr), tail(nullptr) {
 	ListNode* current = other.head;
 	while (current != nullptr) {
 		if (current->shape != nullptr) {
