@@ -7,7 +7,7 @@ Circle::Circle(Point center, std::string name, int radius)
 }
 
 double Circle::area() const {
-	double circ_area = radius * std::numbers::pi;
+	double circ_area = radius * radius * std::numbers::pi;
 	return circ_area;
 }
 
