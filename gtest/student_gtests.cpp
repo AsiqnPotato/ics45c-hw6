@@ -9,6 +9,7 @@
 // --------------------------------------------------------------------------------------- //
 
 #include <gtest/gtest.h>
+#include <sstream>
 
 #include "circle.hpp"
 #include "picture.hpp"
@@ -58,4 +59,57 @@ TEST(ShapeTests, SquareArea) {
 
 	Square degenerate(Point{1, 1}, "square", 0);
 	EXPECT_EQ(degenerate.area(), 0.0);
+}
+
+TEST(ShapeTest, CloneIndependence) {
+	Circle c1(Point{2, 3}, "original", 7);
+	Circle* c2 = c1.clone();
+
+	EXPECT_NE(c2, &c1);
+	EXPECT_EQ(c2->area(), c1.area());
+
+	delete c2;
+}
+
+TEST(PictureTest, EmptyPicture) {
+	Picture pic;
+	EXPECT_EQ(pic.total_area(), 0.0);
+
+	std::stringstream ss;
+	pic.draw_all(ss);
+	pic.print_all(ss);
+}
+
+TEST(PictureTest, SinglePicture) {
+	Picture pic;
+	Circle c(Point{0, 0}, "single", 3);
+
+	pic.add(c);
+	EXPECT_NEAR(pic.total_area(), 28.2743, 0.001);
+
+	std::stringstream ss;
+	pic.print_all(ss);
+	EXPECT_FALSE(ss.str().empty());
+}
+
+TEST(PictureTest, OrderPreservation) {
+	Picture pic;
+	Square one(Point{0, 0}, "first", 4);
+	Square two(Point{0, 0}, "second", 3);
+
+	pic.add(one);
+	pic.add(two);
+
+	EXPECT_EQ(pic.total_area(), 25.0);
+
+	std::stringstream ss;
+	pic.print_all(ss);
+	std::string output = ss.str();
+
+	size_t pos_one = output.find("first");
+	size_t pos_two = output.find("second");
+
+	EXPECT_NE(pos_one, std::string::npos);
+	EXPECT_NE(pos_one, std::string::npos);
+	EXPECT_LT(pos_one, pos_two);
 }
